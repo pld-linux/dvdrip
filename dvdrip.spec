@@ -23,7 +23,7 @@ Summary(uk):	Модуль для Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl дё©И
 Name:		perl-Video-DVDRip
 Version:	0.50.18
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl

@@ -51,7 +51,6 @@ obrazu, napisanego przez Thomasa Östreicha.
 %setup -q -n %{pnam}-%{version}
 
 %build
-#CFLAGS="%{rpmcflags}"
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 %{__make} test
@@ -63,15 +62,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man3
 eval `perl '-V:installarchlib'`
 install -d $RPM_BUILD_ROOT/$installarchlib 
 %{__make} PREFIX=$RPM_BUILD_ROOT%{_prefix} install
-
-#find $RPM_BUILD_ROOT%{_prefix} -type f -print |
-#	sed "s@^$RPM_BUILD_ROOT@@g" |
-#	grep -v perllocal.pod |
-#	grep -v "\.packlist" > Video-DVDRip-%{version}-filelist
-#if [ "$(cat Video-DVDRip-%{version}-filelist)X" = "X" ] ; then
-#    echo "ERROR: EMPTY FILE LIST"
-#    exit -1
-#fi
 
 cd $RPM_BUILD_ROOT%{perl_sitelib}/Video
 pod2man --section=3pm DVDRip.pm >$RPM_BUILD_ROOT%{_mandir}/man3/Video::DVDRip.3pm

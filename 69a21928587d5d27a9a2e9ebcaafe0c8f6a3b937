@@ -1,0 +1,4 @@
+- release 1,
+- remove all Provides entries (all are autgenerated)
+- use DESTDIR style %%install,
+- added man pages level 1 to %%files.

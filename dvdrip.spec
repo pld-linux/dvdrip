@@ -1,6 +1,7 @@
 #
 # Conditional build:
 # _with_tests - perform "make test" (needs working, not busy /dev/audio!)
+#
 %include        /usr/lib/rpm/macros.perl
 %define		pnam	Video-DVDRip
 Summary:	Video::DVDRip Perl module
@@ -57,7 +58,7 @@ obrazu, napisanego przez Thomasa Östreicha.
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
-%{?_with_test:%{__make} test}
+%{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT

@@ -44,7 +44,7 @@ level DVD Ripping API, which uses the Linux Video Stream Processing
 Tool transcode, written by Thomas Östreich.
 
 %description -l pl
-dvd::rip jest opartym na GTK+ programem w perlu do kopiowania DVD,
+dvd::rip jest opartym na GTK+ programem w Perlu do kopiowania DVD,
 zbudowanym w oparciu o niskopoziomowe API DVD Ripping, które z kolei
 korzysta z transcode - linuksowego narzêdzia do obróbki strumieni
 obrazu, napisanego przez Thomasa Östreicha.

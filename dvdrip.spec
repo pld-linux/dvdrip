@@ -24,7 +24,8 @@ Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
 Name:		perl-Video-DVDRip
 Version:	0.50.18
 Release:	1
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
 # Source0-md5:	bb2a3f48354958bc7d1c6a06263e66c8
@@ -54,7 +55,8 @@ obrazu, napisanego przez Thomasa Östreicha.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 

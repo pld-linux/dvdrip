@@ -22,13 +22,13 @@ Summary(sv):	Video::DVDRip Perlmodul
 Summary(uk):	Модуль для Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl дё©И
 Name:		perl-Video-DVDRip
-Version:	0.52.2
+Version:	0.52.3
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
-# Source0-md5:	85f665eed8b6ef1825e7dacd01f556ba
+# Source0-md5:	a7830dc12104bb72963a5a648e82b4a7
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13

@@ -1,0 +1,4 @@
+- Mostly reverting last change:
+- remove *EMPTY* man1 page
+- restore Provides: they *ARE* necessary with current rpm-perlprov
+- release 2

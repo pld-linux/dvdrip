@@ -19,7 +19,7 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
 Name:		perl-Video-DVDRip
 Version:	0.44
-Release:	0.2
+Release:	1
 License: 	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
@@ -29,11 +29,6 @@ BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl-gtk
 BuildRequires:	gdk-pixbuf-devel
 Requires:	transcode
-Provides:	perl(Video::DVDRip::GUI::Project::ClipZoomTab)
-Provides:	perl(Video::DVDRip::GUI::Project::LoggingTab)
-Provides:	perl(Video::DVDRip::GUI::Project::StorageTab)
-Provides:	perl(Video::DVDRip::GUI::Project::TitleTab)
-Provides:	perl(Video::DVDRip::GUI::Project::TranscodeTab)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -53,18 +48,14 @@ obrazu, napisanego przez Thomasa Östreicha.
 %build
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
-%{__make} test
+%{!?_with_test:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man3
 
-eval `perl '-V:installarchlib'`
-install -d $RPM_BUILD_ROOT/$installarchlib 
-%{__make} PREFIX=$RPM_BUILD_ROOT%{_prefix} install
-
-cd $RPM_BUILD_ROOT%{perl_sitelib}/Video
-pod2man --section=3pm DVDRip.pm >$RPM_BUILD_ROOT%{_mandir}/man3/Video::DVDRip.3pm
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -74,4 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes Credits README TODO
 %attr(755,root,root) %{_bindir}/*
 %{perl_sitelib}/Video
-%{_mandir}/man3/*
+%{_mandir}/man[13]/*

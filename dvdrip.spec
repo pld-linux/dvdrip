@@ -23,7 +23,8 @@ Tool transcode, written by Thomas Östreich.
 %setup -q -n Video-DVDRip-%{version}
 
 %build
-CFLAGS="%{rpmcflags}" perl Makefile.PL
+CFLAGS="%{rpmcflags}"
+perl Makefile.PL
 %{__make}
 %{__make} test
 
@@ -42,6 +43,9 @@ if [ "$(cat Video-DVDRip-%{version}-filelist)X" = "X" ] ; then
     echo "ERROR: EMPTY FILE LIST"
     exit -1
 fi
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files -f Video-DVDRip-%{version}-filelist
 %defattr(644,root,root,755)

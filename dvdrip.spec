@@ -1,3 +1,6 @@
+#
+# Conditional build:
+# _with_tests - perform "make test" (needs working, not busy /dev/audio!)
 %include        /usr/lib/rpm/macros.perl
 %define		pnam	Video-DVDRip
 Summary:	Video::DVDRip Perl module
@@ -19,7 +22,7 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
 Name:		perl-Video-DVDRip
 Version:	0.44
-Release:	1
+Release:	2
 License: 	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
@@ -29,6 +32,11 @@ BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl-gtk
 BuildRequires:	gdk-pixbuf-devel
 Requires:	transcode
+Provides:	perl(Video::DVDRip::GUI::Project::ClipZoomTab)
+Provides:	perl(Video::DVDRip::GUI::Project::LoggingTab)
+Provides:	perl(Video::DVDRip::GUI::Project::StorageTab)
+Provides:	perl(Video::DVDRip::GUI::Project::TitleTab)
+Provides:	perl(Video::DVDRip::GUI::Project::TranscodeTab)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,11 +56,11 @@ obrazu, napisanego przez Thomasa Östreicha.
 %build
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
+
 %{!?_with_test:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man3
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -65,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes Credits README TODO
 %attr(755,root,root) %{_bindir}/*
 %{perl_sitelib}/Video
-%{_mandir}/man[13]/*
+%{_mandir}/man3/*

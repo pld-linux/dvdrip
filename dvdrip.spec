@@ -30,7 +30,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
 # Source0-md5:	bb2a3f48354958bc7d1c6a06263e66c8
 URL:		http://www.exit1.org/dvdrip/
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-gtk
 BuildRequires:	perl-gtk-Gdk-Pixbuf

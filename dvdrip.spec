@@ -13,7 +13,7 @@ Summary(fr):	Module Perl Video::DVDRip
 Summary(it):	Modulo di Perl Video::DVDRip
 Summary(ja):	Video::DVDRip Perl ¥â¥¸¥å¡¼¥ë
 Summary(ko):	Video::DVDRip ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Video::DVDRip
+Summary(nb):	Perlmodul Video::DVDRip
 Summary(pl):	Modu³ Perla Video::DVDRip
 Summary(pt):	Módulo de Perl Video::DVDRip
 Summary(pt_BR):	Módulo Perl Video::DVDRip

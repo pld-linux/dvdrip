@@ -35,6 +35,7 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-gtk
 BuildRequires:	perl-gtk-Gdk-Pixbuf
 BuildRequires:	gdk-pixbuf-devel
+Requires:	ImageMagick
 Requires:	transcode
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

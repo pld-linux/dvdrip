@@ -39,12 +39,12 @@ Requires:	transcode
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-dvd::rip is a Perl Gtk+ based DVD copy program build on top of a low
+dvd::rip is a Perl GTK+ based DVD copy program build on top of a low
 level DVD Ripping API, which uses the Linux Video Stream Processing
 Tool transcode, written by Thomas Östreich.
 
 %description -l pl
-dvd::rip jest opartym na Gtk+ programem w perlu do kopiowania DVD,
+dvd::rip jest opartym na GTK+ programem w perlu do kopiowania DVD,
 zbudowanym w oparciu o niskopoziomowe API DVD Ripping, które z kolei
 korzysta z transcode - linuksowego narzêdzia do obróbki strumieni
 obrazu, napisanego przez Thomasa Östreicha.

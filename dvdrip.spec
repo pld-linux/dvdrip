@@ -28,7 +28,7 @@ License: 	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
 URL:		http://www.exit1.org/dvdrip/
-BuildRequires:	perl >= 5.6
+BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-gtk
 BuildRequires:	gdk-pixbuf-devel

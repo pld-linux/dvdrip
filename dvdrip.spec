@@ -24,7 +24,7 @@ Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
 Name:		perl-Video-DVDRip
 Version:	0.50.13
 Release:	1
-License: 	GPL/Artistic
+License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
 # Source0-md5:	08877521b5ef24044e4ce192d6407e8d

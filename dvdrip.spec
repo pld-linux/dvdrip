@@ -57,7 +57,7 @@ obrazu, napisanego przez Thomasa Östreicha.
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
-%{!?_with_test:%{__make} test}
+%{?_with_test:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT

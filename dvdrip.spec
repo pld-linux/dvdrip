@@ -23,21 +23,16 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
 Name:		perl-Video-DVDRip
 Version:	0.50.8
-Release:	1
+Release:	3
 License: 	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-gtk
 BuildRequires:	gdk-pixbuf-devel
 Requires:	transcode
-Provides:	perl(Video::DVDRip::GUI::Project::ClipZoomTab)
-Provides:	perl(Video::DVDRip::GUI::Project::LoggingTab)
-Provides:	perl(Video::DVDRip::GUI::Project::StorageTab)
-Provides:	perl(Video::DVDRip::GUI::Project::TitleTab)
-Provides:	perl(Video::DVDRip::GUI::Project::TranscodeTab)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -55,7 +50,8 @@ obrazu, napisanego przez Thomasa Östreicha.
 %setup -q -n %{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{?_with_tests:%{__make} test}
@@ -73,6 +69,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes Credits README TODO
 %attr(755,root,root) %{_bindir}/*
-%{perl_sitelib}/Video
+%{perl_vendorlib}/Video
 %{_mandir}/man1/*
 %{_mandir}/man3/*

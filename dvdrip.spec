@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _with_tests - perform "make test" (needs working, not busy /dev/audio!)
+%bcond_with	tests	# perform "make test" (needs working, not busy /dev/audio!)
 #
 %include        /usr/lib/rpm/macros.perl
 %define		pnam	Video-DVDRip
@@ -56,7 +56,7 @@ obrazu, napisanego przez Thomasa Östreicha.
 	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT

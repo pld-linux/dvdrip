@@ -22,8 +22,8 @@ Summary(sv):	Video::DVDRip Perlmodul
 Summary(uk):	Модуль для Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl дё©И
 Name:		perl-Video-DVDRip
-Version:	0.44
-Release:	3
+Version:	0.46
+Release:	1
 License: 	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
@@ -74,4 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes Credits README TODO
 %attr(755,root,root) %{_bindir}/*
 %{perl_sitelib}/Video
+%{_mandir}/man1/*
 %{_mandir}/man3/*

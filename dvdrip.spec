@@ -23,7 +23,7 @@ Summary(uk):	Модуль для Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl дё©И
 Name:		perl-Video-DVDRip
 Version:	0.50.18
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -36,6 +36,7 @@ BuildRequires:	perl-gtk
 BuildRequires:	perl-gtk-Gdk-Pixbuf
 BuildRequires:	gdk-pixbuf-devel
 Requires:	transcode
+ExcludeArch:	alpha amd64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

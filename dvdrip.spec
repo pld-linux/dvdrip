@@ -1,9 +1,12 @@
+# TODO
+# - %{perl_vendorlib}/LocaleData to perl-base or use glibc dirs
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test" (needs working, not busy /dev/audio!)
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pnam	Video-DVDRip
+%define		pdir	Video
+%define		pnam	DVDRip
 Summary:	Video::DVDRip Perl module
 Summary(cs):	Modul Video::DVDRip pro Perl
 Summary(da):	Perlmodul Video::DVDRip
@@ -22,19 +25,19 @@ Summary(sv):	Video::DVDRip Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
 Name:		perl-Video-DVDRip
-Version:	0.52.5
+Version:	0.52.6
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.exit1.org/dvdrip/dist/%{pnam}-%{version}.tar.gz
+Source0:	http://www.exit1.org/dvdrip/dist/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	408e9765d696e979c41e90c728e153fc
 URL:		http://www.exit1.org/dvdrip/
+BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-gtk
 BuildRequires:	perl-gtk-Gdk-Pixbuf
-BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	ImageMagick
 Requires:	transcode
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,13 +54,14 @@ korzysta z transcode - linuksowego narzêdzia do obróbki strumieni
 obrazu, napisanego przez Thomasa Östreicha.
 
 %prep
-%setup -q -n %{pnam}-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} \
-	OPTIMIZE="%{rpmcflags}"
+%{__make} -j1 \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 
@@ -77,3 +81,17 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Video
 %{_mandir}/man1/*
 %{_mandir}/man3/*
+# FIXME: this seems wrong
+%dir %{perl_vendorlib}/LocaleData
+%lang(cs) %dir %{perl_vendorlib}/LocaleData/cs/LC_MESSAGES
+%lang(cs) %{perl_vendorlib}/LocaleData/cs/LC_MESSAGES/video.dvdrip.mo
+%lang(de) %dir %{perl_vendorlib}/LocaleData/de/LC_MESSAGES
+%lang(de) %{perl_vendorlib}/LocaleData/de/LC_MESSAGES/video.dvdrip.mo
+%lang(es) %dir %{perl_vendorlib}/LocaleData/es/LC_MESSAGES
+%lang(es) %{perl_vendorlib}/LocaleData/es/LC_MESSAGES/video.dvdrip.mo
+%lang(fr) %dir %{perl_vendorlib}/LocaleData/fr/LC_MESSAGES
+%lang(fr) %{perl_vendorlib}/LocaleData/fr/LC_MESSAGES/video.dvdrip.mo
+%lang(it) %dir %{perl_vendorlib}/LocaleData/it/LC_MESSAGES
+%lang(it) %{perl_vendorlib}/LocaleData/it/LC_MESSAGES/video.dvdrip.mo
+%lang(sr) %dir %{perl_vendorlib}/LocaleData/sr/LC_MESSAGES
+%lang(sr) %{perl_vendorlib}/LocaleData/sr/LC_MESSAGES/video.dvdrip.mo

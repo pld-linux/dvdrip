@@ -31,7 +31,7 @@ Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	408e9765d696e979c41e90c728e153fc
+# Source0-md5:	83f972e5053e61ea18b2f9ea40e88a43
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	perl-devel >= 1:5.8.0

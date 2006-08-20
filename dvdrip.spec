@@ -5,8 +5,6 @@
 %bcond_with	tests	# perform "make test" (needs working, not busy /dev/audio!)
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Video
-%define		pnam	DVDRip
 Summary:	Video::DVDRip Perl module
 Summary(cs):	Modul Video::DVDRip pro Perl
 Summary(da):	Perlmodul Video::DVDRip
@@ -24,19 +22,20 @@ Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Video::DVDRip
 Summary(sv):	Video::DVDRip Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl Ä£¿é
-Name:		perl-Video-DVDRip
-Version:	0.52.6
+Name:		dvdrip
+Version:	0.98.0
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.exit1.org/dvdrip/dist/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	83f972e5053e61ea18b2f9ea40e88a43
+Source0:	http://www.exit1.org/dvdrip/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	18c96bb83d6c6ac3dec4b85cec870f38
 URL:		http://www.exit1.org/dvdrip/
-BuildRequires:	gdk-pixbuf-devel
+BuildRequires:	perl-AnyEvent
+BuildRequires:	perl-Event
+BuildRequires:	perl-Event-RPC
+BuildRequires:	perl-Gtk2-Ex-FormFactory
 BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	perl-gtk
-BuildRequires:	perl-gtk-Gdk-Pixbuf
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	ImageMagick
 Requires:	transcode
@@ -54,7 +53,7 @@ korzysta z transcode - linuksowego narzêdzia do obróbki strumieni
 obrazu, napisanego przez Thomasa Östreicha.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{version}
+%setup -q
 
 %build
 %{__perl} Makefile.PL \

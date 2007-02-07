@@ -23,13 +23,13 @@ Summary(sv):	Video::DVDRip Perlmodul
 Summary(uk):	Модуль для Perl Video::DVDRip
 Summary(zh_CN):	Video::DVDRip Perl дё©И
 Name:		dvdrip
-Version:	0.98.0
+Version:	0.98.2
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	18c96bb83d6c6ac3dec4b85cec870f38
+# Source0-md5:	b0252aeb490796248a91e6c2b3507d53
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-AnyEvent
 BuildRequires:	perl-Event
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{perl_vendorlib}/Video
 %{_mandir}/man1/*
-%{_mandir}/man3/*
+%{_mandir}/man3/Video*
 # FIXME: this seems wrong
 %dir %{perl_vendorlib}/LocaleData
 %lang(cs) %dir %{perl_vendorlib}/LocaleData/cs/LC_MESSAGES

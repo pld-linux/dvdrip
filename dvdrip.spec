@@ -6,22 +6,22 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Video::DVDRip Perl module
-Summary(cs):	Modul Video::DVDRip pro Perl
-Summary(da):	Perlmodul Video::DVDRip
-Summary(de):	Video::DVDRip Perl Modul
-Summary(es):	MÛdulo de Perl Video::DVDRip
-Summary(fr):	Module Perl Video::DVDRip
-Summary(it):	Modulo di Perl Video::DVDRip
-Summary(ja):	Video::DVDRip Perl •‚•∏•Â°º•Î
-Summary(ko):	Video::DVDRip ∆ﬁ ∏¡Ÿ
-Summary(nb):	Perlmodul Video::DVDRip
-Summary(pl):	Modu≥ Perla Video::DVDRip
-Summary(pt):	MÛdulo de Perl Video::DVDRip
-Summary(pt_BR):	MÛdulo Perl Video::DVDRip
-Summary(ru):	Ìœƒ’Ãÿ ƒÃ— Perl Video::DVDRip
-Summary(sv):	Video::DVDRip Perlmodul
-Summary(uk):	Ìœƒ’Ãÿ ƒÃ— Perl Video::DVDRip
-Summary(zh_CN):	Video::DVDRip Perl ƒ£øÈ
+Summary(cs.UTF-8):   Modul Video::DVDRip pro Perl
+Summary(da.UTF-8):   Perlmodul Video::DVDRip
+Summary(de.UTF-8):   Video::DVDRip Perl Modul
+Summary(es.UTF-8):   M√≥dulo de Perl Video::DVDRip
+Summary(fr.UTF-8):   Module Perl Video::DVDRip
+Summary(it.UTF-8):   Modulo di Perl Video::DVDRip
+Summary(ja.UTF-8):   Video::DVDRip Perl „É¢„Ç∏„É•„Éº„É´
+Summary(ko.UTF-8):   Video::DVDRip ÌéÑ Î™®Ï§Ñ
+Summary(nb.UTF-8):   Perlmodul Video::DVDRip
+Summary(pl.UTF-8):   Modu≈Ç Perla Video::DVDRip
+Summary(pt.UTF-8):   M√≥dulo de Perl Video::DVDRip
+Summary(pt_BR.UTF-8):   M√≥dulo Perl Video::DVDRip
+Summary(ru.UTF-8):   –ú–æ–¥—É–ª—å –¥–ª—è Perl Video::DVDRip
+Summary(sv.UTF-8):   Video::DVDRip Perlmodul
+Summary(uk.UTF-8):   –ú–æ–¥—É–ª—å –¥–ª—è Perl Video::DVDRip
+Summary(zh_CN.UTF-8):   Video::DVDRip Perl Ê®°Âùó
 Name:		dvdrip
 Version:	0.98.2
 Release:	1
@@ -44,13 +44,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 dvd::rip is a Perl GTK+ based DVD copy program build on top of a low
 level DVD Ripping API, which uses the Linux Video Stream Processing
-Tool transcode, written by Thomas ÷streich.
+Tool transcode, written by Thomas √ñstreich.
 
-%description -l pl
+%description -l pl.UTF-8
 dvd::rip jest opartym na GTK+ programem w Perlu do kopiowania DVD,
-zbudowanym w oparciu o niskopoziomowe API DVD Ripping, ktÛre z kolei
-korzysta z transcode - linuksowego narzÍdzia do obrÛbki strumieni
-obrazu, napisanego przez Thomasa ÷streicha.
+zbudowanym w oparciu o niskopoziomowe API DVD Ripping, kt√≥re z kolei
+korzysta z transcode - linuksowego narzƒôdzia do obr√≥bki strumieni
+obrazu, napisanego przez Thomasa √ñstreicha.
 
 %prep
 %setup -q

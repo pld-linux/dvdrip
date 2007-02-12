@@ -44,6 +44,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 dvd::rip is a Perl GTK+ based DVD copy program build on top of a low
 level DVD Ripping API, which uses the Linux Video Stream Processing
+Tool transcode, written by Thomas Oestreich.
+
+%description -l en.UTF-8
+dvd::rip is a Perl GTK+ based DVD copy program build on top of a low
+level DVD Ripping API, which uses the Linux Video Stream Processing
 Tool transcode, written by Thomas Östreich.
 
 %description -l pl.UTF-8

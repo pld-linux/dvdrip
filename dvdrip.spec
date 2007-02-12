@@ -6,22 +6,22 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Video::DVDRip Perl module
-Summary(cs.UTF-8):   Modul Video::DVDRip pro Perl
-Summary(da.UTF-8):   Perlmodul Video::DVDRip
-Summary(de.UTF-8):   Video::DVDRip Perl Modul
-Summary(es.UTF-8):   Módulo de Perl Video::DVDRip
-Summary(fr.UTF-8):   Module Perl Video::DVDRip
-Summary(it.UTF-8):   Modulo di Perl Video::DVDRip
-Summary(ja.UTF-8):   Video::DVDRip Perl モジュール
-Summary(ko.UTF-8):   Video::DVDRip 펄 모줄
-Summary(nb.UTF-8):   Perlmodul Video::DVDRip
-Summary(pl.UTF-8):   Moduł Perla Video::DVDRip
-Summary(pt.UTF-8):   Módulo de Perl Video::DVDRip
-Summary(pt_BR.UTF-8):   Módulo Perl Video::DVDRip
-Summary(ru.UTF-8):   Модуль для Perl Video::DVDRip
-Summary(sv.UTF-8):   Video::DVDRip Perlmodul
-Summary(uk.UTF-8):   Модуль для Perl Video::DVDRip
-Summary(zh_CN.UTF-8):   Video::DVDRip Perl 模块
+Summary(cs.UTF-8):	Modul Video::DVDRip pro Perl
+Summary(da.UTF-8):	Perlmodul Video::DVDRip
+Summary(de.UTF-8):	Video::DVDRip Perl Modul
+Summary(es.UTF-8):	Módulo de Perl Video::DVDRip
+Summary(fr.UTF-8):	Module Perl Video::DVDRip
+Summary(it.UTF-8):	Modulo di Perl Video::DVDRip
+Summary(ja.UTF-8):	Video::DVDRip Perl モジュール
+Summary(ko.UTF-8):	Video::DVDRip 펄 모줄
+Summary(nb.UTF-8):	Perlmodul Video::DVDRip
+Summary(pl.UTF-8):	Moduł Perla Video::DVDRip
+Summary(pt.UTF-8):	Módulo de Perl Video::DVDRip
+Summary(pt_BR.UTF-8):	Módulo Perl Video::DVDRip
+Summary(ru.UTF-8):	Модуль для Perl Video::DVDRip
+Summary(sv.UTF-8):	Video::DVDRip Perlmodul
+Summary(uk.UTF-8):	Модуль для Perl Video::DVDRip
+Summary(zh_CN.UTF-8):	Video::DVDRip Perl 模块
 Name:		dvdrip
 Version:	0.98.2
 Release:	1

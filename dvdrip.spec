@@ -24,7 +24,7 @@ Summary(uk.UTF-8):	Модуль для Perl Video::DVDRip
 Summary(zh_CN.UTF-8):	Video::DVDRip Perl 模块
 Name:		dvdrip
 Version:	0.98.2
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -36,8 +36,10 @@ BuildRequires:	perl-Event
 BuildRequires:	perl-Event-RPC
 BuildRequires:	perl-Gtk2-Ex-FormFactory
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-libintl >= 1.16
 BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	ImageMagick
+Requires:	perl-libintl >= 1.16
 Requires:	transcode
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

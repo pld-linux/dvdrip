@@ -23,13 +23,13 @@ Summary(sv.UTF-8):	Video::DVDRip Perlmodul
 Summary(uk.UTF-8):	Модуль для Perl Video::DVDRip
 Summary(zh_CN.UTF-8):	Video::DVDRip Perl 模块
 Name:		dvdrip
-Version:	0.98.2
-Release:	2
+Version:	0.98.8
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	b0252aeb490796248a91e6c2b3507d53
+# Source0-md5:	61b77b298b14c6bde83713e93e9ea4d8
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-AnyEvent
 BuildRequires:	perl-Event
@@ -63,6 +63,7 @@ obrazu, napisanego przez Thomasa Östreicha.
 %setup -q
 
 %build
+export SKIP_UNPACK_REQUIRED_MODULES=1
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} -j1 \

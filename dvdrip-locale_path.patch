@@ -1,0 +1,12 @@
+diff -ur dvdrip-0.98.8.orig/l10n/Makefile dvdrip-0.98.8/l10n/Makefile
+--- dvdrip-0.98.8.orig/l10n/Makefile	2007-11-19 02:31:58.000000000 +0000
++++ dvdrip-0.98.8/l10n/Makefile	2007-11-19 02:34:06.000000000 +0000
+@@ -54,7 +54,7 @@
+ 
+ install: $(MO_FILES)
+ 	cd $(srcdir); \
+-	targetdir='$(libdir)/LocaleData'; \
++	targetdir='$(datadir}/locale'; \
+ 	languages='$(LINGUAS)'; \
+ 	for lang in $$languages; do \
+ 		mkdir -p "$$targetdir/$$lang/LC_MESSAGES" || exit 1; \

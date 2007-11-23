@@ -1,6 +1,3 @@
-# TODO
-# - %{perl_vendorlib}/LocaleData to perl-base or use glibc dirs
-#
 # Conditional build:
 %bcond_with	tests	# perform "make test" (needs working, not busy /dev/audio!)
 #
@@ -24,12 +21,13 @@ Summary(uk.UTF-8):	Модуль для Perl Video::DVDRip
 Summary(zh_CN.UTF-8):	Video::DVDRip Perl 模块
 Name:		dvdrip
 Version:	0.98.8
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	61b77b298b14c6bde83713e93e9ea4d8
+Patch0:		%{name}-locale_path.patch
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-AnyEvent
 BuildRequires:	perl-Event
@@ -41,6 +39,8 @@ BuildRequires:	rpm-perlprov >= 4.1-13
 Requires:	ImageMagick
 Requires:	perl-libintl >= 1.16
 Requires:	transcode
+Suggests:	ffmpeg
+Suggests:	mplayer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,6 +61,7 @@ obrazu, napisanego przez Thomasa Östreicha.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 export SKIP_UNPACK_REQUIRED_MODULES=1
@@ -77,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+mv $RPM_BUILD_ROOT%{perl_vendorlib}/LocaleData $RPM_BUILD_ROOT%{_datadir}/locale
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -88,17 +90,9 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Video
 %{_mandir}/man1/*
 %{_mandir}/man3/Video*
-# FIXME: this seems wrong
-%dir %{perl_vendorlib}/LocaleData
-%lang(cs) %dir %{perl_vendorlib}/LocaleData/cs/LC_MESSAGES
-%lang(cs) %{perl_vendorlib}/LocaleData/cs/LC_MESSAGES/video.dvdrip.mo
-%lang(de) %dir %{perl_vendorlib}/LocaleData/de/LC_MESSAGES
-%lang(de) %{perl_vendorlib}/LocaleData/de/LC_MESSAGES/video.dvdrip.mo
-%lang(es) %dir %{perl_vendorlib}/LocaleData/es/LC_MESSAGES
-%lang(es) %{perl_vendorlib}/LocaleData/es/LC_MESSAGES/video.dvdrip.mo
-%lang(fr) %dir %{perl_vendorlib}/LocaleData/fr/LC_MESSAGES
-%lang(fr) %{perl_vendorlib}/LocaleData/fr/LC_MESSAGES/video.dvdrip.mo
-%lang(it) %dir %{perl_vendorlib}/LocaleData/it/LC_MESSAGES
-%lang(it) %{perl_vendorlib}/LocaleData/it/LC_MESSAGES/video.dvdrip.mo
-%lang(sr) %dir %{perl_vendorlib}/LocaleData/sr/LC_MESSAGES
-%lang(sr) %{perl_vendorlib}/LocaleData/sr/LC_MESSAGES/video.dvdrip.mo
+%lang(cs) %{_datadir}/locale/cs/LC_MESSAGES/video.dvdrip.mo
+%lang(de) %{_datadir}/locale/de/LC_MESSAGES/video.dvdrip.mo
+%lang(es) %{_datadir}/locale/es/LC_MESSAGES/video.dvdrip.mo
+%lang(fr) %{_datadir}/locale/fr/LC_MESSAGES/video.dvdrip.mo
+%lang(it) %{_datadir}/locale/it/LC_MESSAGES/video.dvdrip.mo
+%lang(sr) %{_datadir}/locale/sr/LC_MESSAGES/video.dvdrip.mo

@@ -80,19 +80,15 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 mv $RPM_BUILD_ROOT%{perl_vendorlib}/LocaleData $RPM_BUILD_ROOT%{_datadir}/locale
 
+%find_lang video.%{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f video.%{name}.lang
 %defattr(644,root,root,755)
 %doc Changes Credits README TODO
 %attr(755,root,root) %{_bindir}/*
 %{perl_vendorlib}/Video
 %{_mandir}/man1/*
 %{_mandir}/man3/Video*
-%lang(cs) %{_datadir}/locale/cs/LC_MESSAGES/video.dvdrip.mo
-%lang(de) %{_datadir}/locale/de/LC_MESSAGES/video.dvdrip.mo
-%lang(es) %{_datadir}/locale/es/LC_MESSAGES/video.dvdrip.mo
-%lang(fr) %{_datadir}/locale/fr/LC_MESSAGES/video.dvdrip.mo
-%lang(it) %{_datadir}/locale/it/LC_MESSAGES/video.dvdrip.mo
-%lang(sr) %{_datadir}/locale/sr/LC_MESSAGES/video.dvdrip.mo

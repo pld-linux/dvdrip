@@ -32,6 +32,7 @@ URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-AnyEvent
 BuildRequires:	perl-Event
 BuildRequires:	perl-Event-RPC
+BuildRequires:	perl-Event-ExecFlow
 BuildRequires:	perl-Gtk2-Ex-FormFactory
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-libintl >= 1.16

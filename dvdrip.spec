@@ -20,13 +20,13 @@ Summary(sv.UTF-8):	Video::DVDRip Perlmodul
 Summary(uk.UTF-8):	Модуль для Perl Video::DVDRip
 Summary(zh_CN.UTF-8):	Video::DVDRip Perl 模块
 Name:		dvdrip
-Version:	0.98.8
-Release:	2
+Version:	0.98.9
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	61b77b298b14c6bde83713e93e9ea4d8
+# Source0-md5:	580b84f717f9b8ef962771474d966172
 Patch0:		%{name}-locale_path.patch
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-AnyEvent
@@ -43,6 +43,8 @@ Requires:	transcode
 Suggests:	ffmpeg
 Suggests:	mplayer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq	'perl(Video::DVDRip::Task)'
 
 %description
 dvd::rip is a Perl GTK+ based DVD copy program build on top of a low

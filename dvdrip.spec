@@ -20,13 +20,13 @@ Summary(sv.UTF-8):	Video::DVDRip Perlmodul
 Summary(uk.UTF-8):	Модуль для Perl Video::DVDRip
 Summary(zh_CN.UTF-8):	Video::DVDRip Perl 模块
 Name:		dvdrip
-Version:	0.98.9
+Version:	0.98.11
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.exit1.org/dvdrip/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	580b84f717f9b8ef962771474d966172
+# Source0-md5:	6dfa4199d451757a37eea233a07da4c0
 Patch0:		%{name}-locale_path.patch
 URL:		http://www.exit1.org/dvdrip/
 BuildRequires:	perl-AnyEvent
